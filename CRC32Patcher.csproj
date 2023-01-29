@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <PropertyGroup>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseWindowsForms>True</UseWindowsForms>
+    <Platforms>AnyCPU;x64;ARM32</Platforms>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <Configurations>Debug;Release;Release x86</Configurations>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM32'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|ARM32'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|x64'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="Objects\**" />
+    <EmbeddedResource Remove="Objects\**" />
+    <None Remove="Objects\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="fasm64.dll" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Process.NET-master\src\Process.NET\Process.NET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="fasmdll_managed">
+      <HintPath>fasmdll_managed.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationCore.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
